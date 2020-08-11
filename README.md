@@ -1,5 +1,5 @@
 # Catstagram
-This project was completed as part of the App Academy curriculum. Implementation by Juliet Shafto and .
+This project was completed as part of the App Academy curriculum. Implementation by Juliet Shafto and Bonnie Hardie.
 
 ## Project description
 The goal of this project is to build a website called Catstagram, with the following features:
@@ -11,7 +11,7 @@ The goal of this project is to build a website called Catstagram, with the follo
 - Users can request a new random kitten image to be shown.
 
 ## Features to implement
-- [ ] Load the initial cat image.
+- [x] Load the initial cat image.
 - [ ] Implement `New Pic` button.
 - [ ] Error handling.
 - [ ] Voting.

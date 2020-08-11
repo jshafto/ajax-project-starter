@@ -16,5 +16,5 @@ The goal of this project is to build a website called Catstagram, with the follo
 - [x] Error handling.
 - [x] Voting.
 - [x] Create Comment.
-- [ ] Improve error handling.
+- [x] Improve error handling.
 - [ ] Bonus: delete comments.

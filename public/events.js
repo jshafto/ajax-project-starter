@@ -1,9 +1,16 @@
 // write a function that gets the kitten and sets it
 let score = document.querySelector('.score')
 let commentBox = document.querySelector('.comments');
+let loader = document.querySelector('.loader');
+let input = document.getElementById('user-comment');
+let errorDiv = document.querySelector('.error');
+
+function clearInput() {
+    input.value = '';
+}
+
 const getKitten = () => {
     // edit the loading thing
-    let loader = document.querySelector('.loader')
     loader.innerHTML = "Loading..."
 
 
@@ -18,12 +25,14 @@ const getKitten = () => {
             catHolder.setAttribute('src', res.src);
             score.innerHTML = res.score;
             commentBox.innerHTML = '';
-            loader.innerHTML = "";
+            loader.innerHTML = '';
+            clearInput();
         })
         .catch(err => {
             err.json()
             .then(parsedErr => {
-                alert(`Error: ${parsedErr.message}`);
+                errorDiv.innerHTML = parsedErr.message;
+                loader.innerHTML = '';
             })
 
         })
@@ -42,10 +51,7 @@ const vote = (event) => {
             score.innerHTML = res.score
         })
         .catch(err =>  {
-            err.json()
-            .then(parsedErr => {
-                alert(`Error: ${parsedErr.message}`);
-            })
+            errorDiv.innerHTML = 'Error: Voting failed.'
         })
 }
 
@@ -64,6 +70,7 @@ const submitComment = (event) => {
 			"Content-type":"application/json"
 		}
     }
+    clearInput();
     fetch('/kitten/comments', options)
         .then(res => {
             if (!res.ok) {

@@ -1,8 +1,20 @@
 # Catstagram
+This project was completed as part of the App Academy curriculum. Implementation by Juliet Shafto and .
 
-This is the starter project to help you learn how to use AJAX.
+## Project description
+The goal of this project is to build a website called Catstagram, with the following features:
 
-1. Clone this respository
-   https://github.com/appacademy-starters/ajax-project-starter.
-1. Follow the associated directions in the course.
-1. See the cute kitties.
+- It shows a random kitten picture from the https://thecatapi.com/ API.
+- Users can vote on the picture.
+- Users can comment on the picture.
+- Users can delete comments.
+- Users can request a new random kitten image to be shown.
+
+## Features to implement
+- [ ] Load the initial cat image.
+- [ ] Implement `New Pic` button.
+- [ ] Error handling.
+- [ ] Voting.
+- [ ] Create Comment.
+- [ ] Improve error handling.
+- [ ] Bonus: delete comments.

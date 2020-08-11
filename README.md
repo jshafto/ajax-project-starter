@@ -15,6 +15,6 @@ The goal of this project is to build a website called Catstagram, with the follo
 - [x] Implement `New Pic` button.
 - [x] Error handling.
 - [x] Voting.
-- [ ] Create Comment.
+- [x] Create Comment.
 - [ ] Improve error handling.
 - [ ] Bonus: delete comments.

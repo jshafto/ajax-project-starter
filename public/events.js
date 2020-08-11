@@ -6,10 +6,22 @@ const getKitten = () => {
 
 
     fetch('/kitten/image')
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw res;
+            }
+            return res.json();
+        })
         .then(res => {
             catHolder.setAttribute('src', res.src);
             loader.innerHTML = "";
+        })
+        .catch(err => {
+            err.json()
+            .then(parsedErr => {
+                alert(`something went wrong! Please try again! ${parsedErr.message}`);
+            })
+
         })
 };
 

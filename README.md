@@ -13,7 +13,7 @@ The goal of this project is to build a website called Catstagram, with the follo
 ## Features to implement
 - [x] Load the initial cat image.
 - [x] Implement `New Pic` button.
-- [ ] Error handling.
+- [x] Error handling.
 - [ ] Voting.
 - [ ] Create Comment.
 - [ ] Improve error handling.

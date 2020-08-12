@@ -56,7 +56,24 @@ const vote = (event) => {
         })
 }
 
-let form = document.querySelector('.comment-form')
+let form = document.querySelector('.comment-form');
+
+const renderComments = arr => {
+    commentBox.innerHTML = '';
+    arr.comments.forEach((string,id) => {
+        let newDiv = document.createElement('div');
+        let textSpan =document.createElement('span');
+        textSpan.innerHTML = string;
+        newDiv.appendChild(textSpan);
+        newDiv.setAttribute('class', 'comment-str');
+        commentBox.appendChild(newDiv);
+        let buttonDiv = document.createElement('button');
+        buttonDiv.setAttribute('id', `delete-${id}`);
+        buttonDiv.setAttribute('class', `delete-button`);
+        buttonDiv.innerHTML = '❌';
+        newDiv.appendChild(buttonDiv);
+    })
+}
 
 const submitComment = (event) => {
     event.preventDefault();
@@ -79,14 +96,22 @@ const submitComment = (event) => {
             }
             return res.json();
         })
-        .then(arr => {
-            commentBox.innerHTML = '';
-            arr.comments.forEach(string => {
-                let newDiv = document.createElement('div');
-                newDiv.innerHTML = string;
-                commentBox.appendChild(newDiv);
-            })
-        })
+        .then(renderComments)
+        .catch(err =>errorDiv.innerHTML = 'Error: Comment failed.')
+}
+
+const deleteHandler = event => {
+    if (event.target.getAttribute('class')!=='delete-button') return;
+    let id = event.target.id.slice(7);
+    fetch(`kitten/comments/${id}`,  { method: "DELETE" })
+    .then(res => {
+        if (!res.ok) {
+            throw res;
+        }
+        return res.json();
+    })
+    .then(renderComments)
+    .catch(err =>errorDiv.innerHTML = 'Error: Delete comment failed.')
 }
 
 form.addEventListener('submit', submitComment)
@@ -104,3 +129,5 @@ document.addEventListener('DOMContentLoaded', getKitten)
 
 // picButton.addEventListener('click', getKitten)
 catHolder.addEventListener('click', getKitten)
+
+commentBox.addEventListener('click', deleteHandler)

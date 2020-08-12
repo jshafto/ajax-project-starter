@@ -130,3 +130,22 @@ h1 {
   padding-left: 10px;
   padding-top: 10px;
 }
+
+
+.comment-str {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.delete-button {
+  border: none;
+  font-size: 12px;
+  background-color: white;
+}
+
+.delete-button:hover {
+  background-color: lightgrey;
+}

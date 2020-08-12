@@ -4,39 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./index.css" />
-    <title>Catstagram</title>
+    <title>catstagram</title>
   </head>
   <body>
     <section class="container">
-      <h1>Kitten Pic</h1>
-      <button id="new-pic">New Pic!</button>
-      <div class="loader"></div>
-      <div class="error"></div>
+      <h1>catstagram</h1>
+
       <img class="cat-pic" src="" />
       <div class="score-container">
-        <div class="score-display">
-          <span>Popularity Score: </span>
-          <span class="score">0</span>
-        </div>
         <div>
-          <button id="upvote">Upvote</button>
-          <button id="downvote">Downvote</button>
+          <div class="score-display">
+            <button id="upvote">😻</button>
+            <div>
+              <span>popularity: </span>
+              <span class="score">0</span>
+            </div>
+            <button id="downvote">😿</button>
+          </div>
         </div>
       </div>
+
+      <div class="comments"></div>
       <form class="comment-form">
         <div class="user-comment-container">
-          <label for="user-comment">Comment:</label>
+          <label for="user-comment">comment:</label>
           <input
             required
             name="user-comment"
             id="user-comment"
             class="user-comment"
-            placeholder=" Add a comment... "
+            placeholder=" tell us what you think . . .  "
           />
         </div>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="😺" id="submit"/>
       </form>
-      <div class="comments"></div>
+      <!-- <button id="new-pic">new pic</button> -->
+      <div class="loader"></div>
+      <div class="error"></div>
     </section>
 
     <script src="./events.js"></script>

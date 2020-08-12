@@ -18,3 +18,4 @@ The goal of this project is to build a website called Catstagram, with the follo
 - [x] Create Comment.
 - [x] Improve error handling.
 - [ ] Bonus: delete comments.
+- [x] Super Bonus: style page.

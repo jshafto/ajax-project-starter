@@ -4,6 +4,7 @@ let commentBox = document.querySelector('.comments');
 let loader = document.querySelector('.loader');
 let input = document.getElementById('user-comment');
 let errorDiv = document.querySelector('.error');
+let catHolder = document.querySelector('.cat-pic');
 
 function clearInput() {
     input.value = '';
@@ -96,9 +97,10 @@ upvoteButton.addEventListener('click', vote)
 let downvoteButton = document.getElementById('downvote');
 downvoteButton.addEventListener('click', vote)
 
-let catHolder = document.querySelector('.cat-pic');
+
 document.addEventListener('DOMContentLoaded', getKitten)
 
-let picButton= document.getElementById('new-pic')
+// let picButton= document.getElementById('new-pic')
 
-picButton.addEventListener('click', getKitten)
+// picButton.addEventListener('click', getKitten)
+catHolder.addEventListener('click', getKitten)

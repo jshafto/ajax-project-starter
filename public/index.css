@@ -1,8 +1,26 @@
+* {
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  color: rgb(95, 95, 95);
+  font-size: small;
+  font-weight: lighter;
+  background-color: white;
+
+}
+body {
+  background-color: #FAFAFA;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+}
+
+h1 {
+  /* font-weight: normal; */
+  font-weight: lighter;
+  font-size: xx-large;
 }
 
 .comment-container {
@@ -20,7 +38,16 @@
 }
 
 .cat-pic {
-  margin: 20px;
+  /* margin: 20px; */
+  height: 400px;
+  width: 400px;
+  /* box-sizing: content-box; */
+  object-fit: cover;
+  border-radius: 10px 10px 0px 0px;
+  border-top: 1px solid rgb(185, 185, 185);
+  border-left:1px solid rgb(185, 185, 185);
+  border-right: 1px solid rgb(185, 185, 185);
+
 }
 
 .score-container {
@@ -30,30 +57,76 @@
 }
 
 .score-display {
-  margin-bottom: 10px;
-}
-
-.comment-form {
-  margin: 20px;
+  width: 400px;
+  border-top: 1px solid rgb(185, 185, 185);
+  border-left:1px solid rgb(185, 185, 185);
+  border-right: 1px solid rgb(185, 185, 185);
+  /* margin-bottom: 10px; */
   display: flex;
-  width: 100%;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
 
+#upvote,
+#downvote,
+#submit {
+  width: 100px;
+  border: none;
+  font-size: 20px;
+  background-color: white;
+}
+
+
+#upvote:hover,
+#downvote:hover,
+#submit:hover {
+  width: 100px;
+  border: none;
+  background-color: lightgray;
+}
+
+.comment-form {
+  /* margin: 20px; */
+  display: flex;
+  width: 400px;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 0px 0px 10px 10px;
+}
+
 .user-comment-container {
-  margin-right: 10px;
+  /* margin-right: 10px; */
+  /*  */
 }
 
 .user-comment {
   padding: 5px;
+  width: 200px;
+  /* border: 1px solid rgb(185, 185, 185); */
+
 }
 
 .comments {
-  border: solid grey 1px;
-  height: 400px;
-  width: 80%;
-  margin: 10px;
-  padding: 5px;
-  overflow: scroll;
+  height: 100px;
+  /* width: 80%; */
+  width: 400px;
+  /* margin: 10px;
+  padding: 5px; */
+  /* overflow: scroll; */
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 1px solid rgb(185, 185, 185);
+  border-left:1px solid rgb(185, 185, 185);
+  border-right: 1px solid rgb(185, 185, 185);
+  overflow: auto;
+}
+
+.comments > div {
+  padding-left: 10px;
+  padding-top: 10px;
 }
